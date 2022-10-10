@@ -31,9 +31,11 @@ gem 'devise'
 gem 'cancancan'
 gem 'rails_admin'
 gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
 gem 'jquery-rails'
 gem 'whenever'
 gem 'rubocop'
+gem 'sass-rails'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
