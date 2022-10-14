@@ -27,10 +27,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">SchoolManagement</a>
+        <%= link_to "SchoolManagement", root_path, class: "navbar-brand" %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
+            <li><%= link_to "Teachers", teachers_path  %></li>
             <li><%= link_to "Link2", "/path2"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
           </ul>
@@ -58,7 +58,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2022</p>
+        <p>&copy; School Management App 2022</p>
       </footer>
 
     </div> <!-- /container -->

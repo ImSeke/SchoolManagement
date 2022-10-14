@@ -1,0 +1,27 @@
+<h1>Teacher <%= @teacher.name %></h1>
+<select class="form-select" aria-label="Default select example">
+  <option selected>Select a day</option>
+  <option value="1">Monday</option>
+  <option value="2">Tuesday</option>
+  <option value="2">Wednesday</option>
+  <option value="2">Thursday</option>
+  <option value="3">Friday</option>
+</select>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Lesson</th>
+            <th>Group</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @teacher.schedule.each do |lesson| %>
+            <tr>
+                <td> <%= lesson.course.name %> </td>
+                <td> <%= lesson.group.name %> </td>
+                <td> <%= lesson.hour.hour %>:00 </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
