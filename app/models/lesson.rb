@@ -5,7 +5,7 @@ class Lesson < ApplicationRecord
   belongs_to :group
   belongs_to :teacher
   belongs_to :course
-  # validate :lesson_overlap
+  validate :lesson_overlap
 
   def to_s
     "#{course.name} at #{hour.hour}:00 for #{group.name}"
