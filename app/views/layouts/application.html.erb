@@ -56,13 +56,9 @@
                 <% if current_user.is_a?(Student) %>
                   <li><%= link_to "My profile", student_path(current_user.id)  %></li>
                 <% elsif current_user.is_a?(Teacher) %>
-                  <li><%= link_to "My profile", teacher_path(current_user.id)  %></li>
-                <% else %>
-                  <li><%= link_to "Link1", "/path1"  %></li>
+                  <li><%= link_to "My profile", teacher_path(current_user.id)  %></li>     
                 <% end %>
-                <li><%= link_to "Link2", "/path2"  %></li>
-                <li><%= link_to "Link3", "/path3"  %></li>
-              
+                <li><%= link_to "Logout", destroy_user_session_path, method: :delete %>  </li>      
               </ul>
             </div><!--/.well -->
           </div><!--/span-->

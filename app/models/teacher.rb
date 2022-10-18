@@ -11,4 +11,8 @@ class Teacher < User
 
     Lesson.where(day:, teacher_id: id).order(:hour)
   end
+
+  def week_schedule
+    Lesson.where(teacher_id: id).order(:hour)
+  end
 end

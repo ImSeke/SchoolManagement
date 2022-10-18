@@ -1,5 +1,32 @@
 <h1>Student <%= @student.name %></h1>
-<table class="table table-striped">
+<div class="form-group">
+    <button class='btn btn-primary' onclick="myFunction()">Show day</button>
+</div>
+<table id="day" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Lesson</th>
+            <th>Group</th>
+            <th>Time</th>
+            <th>Day</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @student.schedule.each do |lesson| %>
+            <tr>
+                <td> <%= lesson.course.name %> </td>
+                <td> <%= lesson.group.name %> </td>
+                <td> <%= lesson.hour.hour %>:00 </td>
+                <td> <%= lesson.day %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<div class="form-group">
+    <button class='btn btn-primary' onclick="myFunction2()">Show week</button>
+</div>
+<table id="week" class="table table-striped">
     <thead>
         <tr>
             <th>Lesson</th>

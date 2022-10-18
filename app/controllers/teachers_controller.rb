@@ -2,7 +2,7 @@
 
 class TeachersController < ApplicationController
   load_and_authorize_resource
-  before_action :set_teacher, only: %i[edit show]
+  before_action :set_teacher, only: %i[edit show show_week]
 
   def new
     @teacher = Teacher.new
@@ -12,9 +12,9 @@ class TeachersController < ApplicationController
     @teachers = Teacher.all
   end
 
-  def show
-    # @teacher = Teacher.find_by_id(params[:id])
-  end
+  def show; end
+
+  # def show_week; end
 
   def edit; end
 

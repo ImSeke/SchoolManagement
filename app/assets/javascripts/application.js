@@ -8,3 +8,21 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+function myFunction() {
+    var x = document.getElementById("day");
+    if (x.hidden) {
+      x.hidden = false ;
+    } else {
+      x.hidden = true ;
+    }
+}
+
+function myFunction2() {
+    var x = document.getElementById("week");
+    if (x.hidden) {
+      x.hidden = false ;
+    } else {
+      x.hidden = true ;
+    }
+}
