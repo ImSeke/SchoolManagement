@@ -4,6 +4,9 @@
         <tr>
             <th>Name</th>
             <th>Email</th>
+            <% if can? :manage, User %>
+            <th>Actions</th>
+            <% end %>
         </tr>
     </thead>
     <tbody>
@@ -11,6 +14,10 @@
             <tr>
                 <td> <%= link_to "#{teacher.name}", teacher_path(teacher) %> </td>
                 <td> <%= teacher.email %> </td>
+                <% if can? :manage, User %>
+                <td> <%= link_to "Edit", edit_teacher_path(teacher), class: 'btn btn-primary' %>  
+                         <%= link_to "Delete", teacher_path(teacher), method: :delete, data: {confirm: "Are you sure?"}, class:"card-link btn btn-danger" %> </td>
+                <% end %>
             </tr>
         <% end %>
     </tbody>

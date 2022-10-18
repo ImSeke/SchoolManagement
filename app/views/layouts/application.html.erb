@@ -31,8 +31,10 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Teachers", teachers_path  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "Students", students_path  %></li>
+            <% if current_user.is_a?(Admin) %>
+            <li><%= link_to "Admin", "/admin" %></li>
+            <% end %>
           </ul>
         </div>
       </div>
@@ -44,18 +46,29 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
-        <div class="col-lg-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+        <% if user_signed_in? %>
+          <div class="col-lg-3">
+            <div class="well sidebar-nav">
+              
+              <h3><%= current_user.name %></h3>
+              <ul class="nav nav-list">
+                <li class="nav-header"><%= current_user.type %></li>
+                <% if current_user.is_a?(Student) %>
+                  <li><%= link_to "My profile", student_path(current_user.id)  %></li>
+                <% elsif current_user.is_a?(Teacher) %>
+                  <li><%= link_to "My profile", teacher_path(current_user.id)  %></li>
+                <% else %>
+                  <li><%= link_to "Link1", "/path1"  %></li>
+                <% end %>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              
+              </ul>
+            </div><!--/.well -->
+          </div><!--/span-->
+        <% end %>
       </div><!--/row-->
+     
 
       <footer>
         <p>&copy; School Management App 2022</p>

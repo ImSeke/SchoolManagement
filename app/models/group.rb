@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class Group < ApplicationRecord
-    validates :name, presence: true, uniqueness: { case_sensitive: false }
-    has_many :students
-    has_many :lessons
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  has_many :students
+  has_many :lessons
 end

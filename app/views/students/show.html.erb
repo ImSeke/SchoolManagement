@@ -1,4 +1,4 @@
-<h1>Teacher <%= @teacher.name %></h1>
+<h1>Student <%= @student.name %></h1>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -6,22 +6,16 @@
             <th>Group</th>
             <th>Time</th>
             <th>Day</th>
-            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        <% @teacher.schedule.each do |lesson| %>
+        <% @student.schedule.each do |lesson| %>
             <tr>
                 <td> <%= lesson.course.name %> </td>
                 <td> <%= lesson.group.name %> </td>
                 <td> <%= lesson.hour.hour %>:00 </td>
                 <td> <%= lesson.day %> </td>
-                    <td> <%= link_to "Edit", edit_lesson_path(lesson), class: 'btn btn-primary' %>  
-                         <%= link_to "Delete", lesson_path(lesson), method: :delete, data: {confirm: "Are you sure?"}, class:"card-link btn btn-danger" %> </td>
             </tr>
         <% end %>
     </tbody>
 </table>
-<div class="form-group">
-    <%= link_to "Add new Lesson", new_lesson_path, class: 'btn btn-primary' %>
-</div>
