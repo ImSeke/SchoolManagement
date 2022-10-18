@@ -1,0 +1,23 @@
+<h1>Teacher <%= @user.name %></h1>
+
+<table id="day" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Lesson</th>
+            <th>Group</th>
+            <th>Time</th>
+            <th>Day</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @user.schedule.each do |lesson| %>
+            <tr>
+                <td> <%= lesson.course.name %> </td>
+                <td> <%= lesson.group.name %> </td>
+                <td> <%= lesson.hour.hour %>:00 </td>
+                <td> <%= lesson.day %> </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

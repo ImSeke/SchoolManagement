@@ -37,7 +37,7 @@ gem 'rails_admin'
 gem 'rubocop'
 gem 'sass-rails'
 gem 'twitter-bootstrap-rails'
-gem 'whenever'
+gem 'whenever', require: false
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

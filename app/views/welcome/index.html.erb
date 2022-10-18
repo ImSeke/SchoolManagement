@@ -1,1 +1,4 @@
 <h1>Welcome <%= current_user.name %></h1>
+<% unless current_user.is_a?(Admin) %>
+    <% current_user.daily_schedule_email %>
+<% end %>
