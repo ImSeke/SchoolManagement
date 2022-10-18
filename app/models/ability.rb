@@ -11,14 +11,23 @@ class Ability
     when Admin
       can :manage, :all
     when Teacher
-      can :index, Teacher
-      can :show, Teacher, id: user.id
-      can %i[edit update], Teacher, id: user.id
-      can :manage, Lesson, teacher_id: user.id
-      can %i[index show], Student
+      teacher_can(user)
     when Student
-      can :index, Student
-      can :show, Student, id: user.id
+      student_can(user)
     end
+  end
+
+  def teacher_can(user)
+    can :index, Teacher
+    can :show, Teacher, id: user.id
+    can %i[edit update], Teacher, id: user.id
+    can :manage, Lesson, teacher_id: user.id
+    can %i[index show], Student
+  end
+
+  def student_can(user)
+    can :index, Teacher
+    can :index, Student
+    can :show, Student, id: user.id
   end
 end

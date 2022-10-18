@@ -9,11 +9,13 @@
     </thead>
     <tbody>
         <% @students.each do |student| %>
-            <tr>
-                <td> <%= link_to "#{student.name}", student_path(student) %> </td>
-                <td> <%= student.group.name %> </td>
-                <td> <%= student.email %> </td>
-            </tr>
+            <% if (student.group_id == current_user.group_id) || !current_user.is_a?(Student)  %>
+                <tr>
+                    <td> <%= student.name %> </td>
+                    <td> <%= student.group.name %> </td>
+                    <td> <%= student.email %> </td>
+                </tr>
+            <% end %>
         <% end %>
     </tbody>
 </table>

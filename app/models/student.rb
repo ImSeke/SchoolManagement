@@ -21,6 +21,7 @@ class Student < User
   end
 
   private
+
   def welcome_email
     UserMailer.with(user: self).welcome_email.deliver.now
   end

@@ -14,8 +14,6 @@ class TeachersController < ApplicationController
 
   def show; end
 
-  # def show_week; end
-
   def edit; end
 
   def update

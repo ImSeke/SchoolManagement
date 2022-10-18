@@ -9,7 +9,7 @@
     <tbody>
         <% @teachers.each do |teacher| %>
             <tr>
-                <td> <%= link_to "#{teacher.name}", teacher_path(teacher) %> </td>
+                <td> <%= teacher.name %> </td>
                 <td> <%= teacher.email %> </td>
             </tr>
         <% end %>

@@ -3,6 +3,7 @@ AllCops:
     - 'Guardfile'
     - 'bin/*'
     - 'db/*'
+    - 'config/initializers/rails_admin.rb'
 Layout/LineLength:
   Max: 250
 Style/ClassAndModuleChildren:
