@@ -23,6 +23,6 @@ class Teacher < User
   private
 
   def welcome_email
-    UserMailer.with(user: self).welcome_email.deliver.now
+    UserMailer.with(user: self).welcome_email.deliver_now
   end
 end

@@ -13,8 +13,15 @@
 #   rake "some:great:rake:task"
 # end
 #
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
+
+set :output, './log/cron.log'
+set :environment, 'development'
+
+every 1.day, at: '10:00 am' do
+    runner "Student.daily_schedule_mail"
+end
+every 1.day, at: '10:00 am' do
+    runner "Teacher.daily_schedule_mail"
+end
 
 # Learn more: http://github.com/javan/whenever

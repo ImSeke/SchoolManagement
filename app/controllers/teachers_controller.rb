@@ -29,6 +29,7 @@ class TeachersController < ApplicationController
     @teacher = teacher.new(teacher_params)
     if @teacher.save
       flash[:success] = 'Teacher was successfully created'
+      @etacher.welcome_email
       redirect_to teacher_path(:id)
     else
       render 'new', status: :unprocessable_entity
