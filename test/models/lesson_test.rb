@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 require 'test_helper'
+require 'rspec/autorun'
 
 class LessonTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  describe Lesson do
+    
+  end
+
+
 end
