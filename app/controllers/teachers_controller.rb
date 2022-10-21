@@ -2,7 +2,7 @@
 
 class TeachersController < ApplicationController
   load_and_authorize_resource
-  before_action :set_teacher, only: %i[edit show show_week]
+  before_action :set_teacher, only: %i[show]
 
   def index
     @teachers = Teacher.all

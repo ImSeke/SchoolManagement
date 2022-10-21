@@ -36,7 +36,7 @@
         </tr>
     </thead>
     <tbody>
-        <% @student.schedule.each do |lesson| %>
+        <% @student.week_schedule.each do |lesson| %>
             <tr>
                 <td> <%= lesson.course.name %> </td>
                 <td> <%= lesson.group.name %> </td>

@@ -1,12 +1,12 @@
 class LessonsController < ApplicationController
   load_and_authorize_resource
-  before_action :set_lesson, only: %i[edit show]
+  before_action :set_lesson, only: %i[edit]
 
   def new
     @lesson = Lesson.new
   end
 
-  def show; end
+  # def show; end
 
   def edit; end
 

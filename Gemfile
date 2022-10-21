@@ -36,9 +36,9 @@ gem 'jquery-rails'
 gem 'rails_admin'
 gem 'rubocop'
 gem 'sass-rails'
+gem 'simplecov', require: false, group: :test
 gem 'twitter-bootstrap-rails'
 gem 'whenever', require: false
-gem 'simplecov', require: false, group: :test
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -64,11 +64,12 @@ gem 'bootsnap', require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'byebug', '~> 9.0', '>= 9.0.6'
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'database_cleaner-active_record'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem "rubycritic", require: false
 end
 
 group :development do

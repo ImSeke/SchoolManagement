@@ -5,8 +5,5 @@ require 'rspec/autorun'
 
 class LessonTest < ActiveSupport::TestCase
   describe Lesson do
-    
   end
-
-
 end
